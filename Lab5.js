@@ -89,11 +89,7 @@ const Lab5 = (app) => {
     module.name = newName;
     res.json(module);
   });
-  app.get("/a5/todos/:id", (req, res) => {
-    const { id } = req.params;
-    const todo = todos.find((t) => t.id === parseInt(id));
-    res.json(todo);
-  });
+
   app.get("/a5/todos", (req, res) => {
     const { completed } = req.query;
     if (completed !== undefined) {
@@ -113,6 +109,13 @@ const Lab5 = (app) => {
     todos.push(newTodo);
     res.json(todos);
   });
+
+  app.get("/a5/todos/:id", (req, res) => {
+    const { id } = req.params;
+    const todo = todos.find((t) => t.id === parseInt(id));
+    res.json(todo);
+  });
+
   app.get("/a5/todos/:id/delete", (req, res) => {
     const { id } = req.params;
     const todo = todos.find((t) => t.id === parseInt(id));

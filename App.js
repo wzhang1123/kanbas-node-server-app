@@ -8,8 +8,12 @@ import cors from "cors";
 import "dotenv/config";
 import session from "express-session";
 
-const CONNECTION_STRING = process.env.DB_CONNECTION_STRING;
-mongoose.connect(CONNECTION_STRING);
+const CONNECTION_STRING =
+  process.env.DB_CONNECTION_STRING || "mongodb://127.0.0.1:27017/kanbas";
+
+// mongoose.connect(CONNECTION_STRING);
+mongoose.connect("mongodb://127.0.0.1:27017/kanbas");
+
 const app = express();
 
 const sessionOptions = {

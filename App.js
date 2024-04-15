@@ -4,7 +4,7 @@ import UserRoutes from "./Users/routes.js";
 import Lab5 from "./Lab5.js";
 import CourseRoutes from "./Kanbas/Courses/routes.js";
 import ModuleRoutes from "./Kanbas/Modules/routes.js";
-import cors from "cors";
+// import cors from "cors";
 import "dotenv/config";
 import session from "express-session";
 

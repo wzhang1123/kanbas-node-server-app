@@ -16,18 +16,17 @@ mongoose.connect("mongodb://127.0.0.1:27017/kanbas");
 
 const app = express();
 
-const sessionOptions = {
-  secret: process.env.SESSION_SECRET,
-  resave: false,
-  saveUninitialized: false,
-};
 app.use(
   cors({
     credentials: true,
     origin: process.env.FRONTEND_URL,
   })
 );
-
+const sessionOptions = {
+  secret: process.env.SESSION_SECRET,
+  resave: false,
+  saveUninitialized: false,
+};
 if (process.env.NODE_ENV !== "development") {
   sessionOptions.proxy = true;
   sessionOptions.cookie = {
@@ -36,7 +35,6 @@ if (process.env.NODE_ENV !== "development") {
     domain: process.env.HTTP_SERVER_DOMAIN,
   };
 }
-
 app.use(session(sessionOptions));
 app.use(express.json());
 ModuleRoutes(app);

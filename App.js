@@ -15,6 +15,7 @@ const DB_NAME = process.env.DB_NAME;
 mongoose.connect(CONNECTION_STRING, { dbName: DB_NAME });
 
 const app = express();
+const cors = require("cors");
 
 app.use(
   cors({

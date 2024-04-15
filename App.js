@@ -4,7 +4,7 @@ import UserRoutes from "./Users/routes.js";
 import Lab5 from "./Lab5.js";
 import CourseRoutes from "./Kanbas/Courses/routes.js";
 import ModuleRoutes from "./Kanbas/Modules/routes.js";
-// import cors from "cors";
+import cors from "cors";
 import "dotenv/config";
 import session from "express-session";
 
@@ -15,7 +15,7 @@ const DB_NAME = process.env.DB_NAME;
 mongoose.connect(CONNECTION_STRING, { dbName: DB_NAME });
 
 const app = express();
-const cors = require("cors");
+// const cors = require("cors");
 
 app.use(
   cors({

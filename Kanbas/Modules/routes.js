@@ -1,4 +1,6 @@
 import db from "../Database/index.js";
+import * as dao from "./dao.js";
+
 function ModuleRoutes(app) {
   app.put("/api/modules/:mid", (req, res) => {
     const { mid } = req.params;
@@ -13,6 +15,7 @@ function ModuleRoutes(app) {
     res.sendStatus(200);
   });
 
+  const createModule = async (req, res) => {};
   app.post("/api/courses/:cid/modules", (req, res) => {
     const { cid } = req.params;
     const newModule = {

@@ -3,6 +3,8 @@ export const createModule = (module) => {
   delete module._id;
   return model.create(module);
 };
+export const updateModule = (moduleId, course) =>
+  model.updateOne({ _id: moduleId }, { $set: course });
 
 export const findAllModules = () => model.find();
 export const findModuleById = (moduleId) => model.findById(moduleId);

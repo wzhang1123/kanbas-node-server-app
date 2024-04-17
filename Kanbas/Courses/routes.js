@@ -18,8 +18,8 @@ export default function CourseRoutes(app) {
   };
 
   const updateCourse = async (req, res) => {
-    const { _id } = req.params;
-    const course = await dao.updateCourse(_id, req.body);
+    const { courseId } = req.params;
+    const course = await dao.updateCourse(courseId, req.body);
     res.json(course);
   };
 

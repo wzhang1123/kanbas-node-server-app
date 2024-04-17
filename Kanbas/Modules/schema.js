@@ -1,11 +1,14 @@
 import mongoose from "mongoose";
 
 const moduleSchema = new mongoose.Schema({
-  id: String,
-  name: { type: String, required: true, unique: true },
+  _id: String,
+  name: { type: String, required: true },
   description: { type: String, required: true },
-  course: String,
-  lessons: Array,
+  course: { type: String, required: true },
+  lessons: {
+    type: Array,
+    default: [],
+  },
 });
 
 export default moduleSchema;

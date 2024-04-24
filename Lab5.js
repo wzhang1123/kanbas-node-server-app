@@ -21,6 +21,9 @@ const todos = [
 ];
 
 const Lab5 = (app) => {
+  app.get("/a5/welcome", (req, res) => {
+    res.send("Welcome to Assignment 5");
+  });
   app.post("/a5/todos", (req, res) => {
     const newTodo = {
       ...req.body,
